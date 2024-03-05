@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import ColorItem from './ColorItem.vue'
-type Color = 'white' | 'black' | 'blue' | 'green' | 'beige'
+import type { Color } from '@/types/Color'
 
 const emit = defineEmits<{
   (event: 'select:color', value: Color): void

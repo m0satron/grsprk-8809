@@ -4,16 +4,13 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-
-type Color = 'white' | 'black' | 'blue' | 'green' | 'beige'
+import type { Color } from '@/types/Color'
 
 const props = defineProps<{
   color: Color
 }>()
 
-const colorClass = computed(() => {
-  return `bg-color-${props.color}`
-})
+const colorClass = computed(() => `bg-color-${props.color}`)
 </script>
 
 <style scoped lang="scss">

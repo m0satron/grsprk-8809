@@ -12,11 +12,11 @@
 import { ref, watchEffect } from 'vue'
 
 const emit = defineEmits<{
-  (event: 'update:modelValue', newValue: boolean): void
+  (event: 'update:modelValue'): void
 }>()
 
 const props = defineProps<{
-  modelValue: Boolean
+  modelValue: boolean
 }>()
 
 const isOn = ref(props.modelValue)

@@ -20,7 +20,7 @@ import { ref, watchEffect } from 'vue'
 const emit = defineEmits(['update:modelValue'])
 
 const props = defineProps<{
-  modelValue: Boolean
+  modelValue: boolean
 }>()
 
 const isChecked = ref(props.modelValue)
