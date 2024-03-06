@@ -1,1 +1,1 @@
-export type Action = 'carbon' | 'plastic bottles' | 'trees'
+export type Action = 'collects' | 'plants' | 'offsets'
