@@ -1,6 +1,6 @@
 <template>
   <div
-    class="toggle-button bg-color-white border border-green-light rounded-xl"
+    class="toggle-button bg-color-white border border-green-light rounded-xl display-inline-flex align-center"
     :class="{ 'is-on': isOn }"
     @click="toggle"
   >
@@ -12,7 +12,7 @@
 import { ref, watchEffect } from 'vue'
 
 const emit = defineEmits<{
-  (event: 'update:modelValue'): void
+  (event: 'update:modelValue', value: boolean): void
 }>()
 
 const props = defineProps<{
@@ -38,8 +38,6 @@ const toggle = () => {
   width: 2.9rem;
   height: 1.33rem;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
   transition: background-color 0.3s ease;
   box-shadow: inset 0rem 0rem 0.2rem $gray;
 }

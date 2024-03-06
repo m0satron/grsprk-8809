@@ -6,7 +6,7 @@
     </h1>
     <hr class="divider border-m border-gray" />
 
-    <div class="widget-content">
+    <div class="widget-content flex justify-space-between align-center">
       <slot />
     </div>
   </div>
@@ -30,11 +30,8 @@ hr {
 }
 
 .widget-content {
-  display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
 }
 
 @media (max-width: 768px) {

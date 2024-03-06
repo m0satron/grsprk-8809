@@ -1,5 +1,5 @@
 <template>
-  <div class="color-item" :class="colorClass" />
+  <div class="color-item display-inline-block" :class="colorClass" />
 </template>
 
 <script setup lang="ts">
@@ -21,7 +21,6 @@ const colorClass = computed(() => {
 @import '@/assets/functions/opacity.scss';
 
 .color-item {
-  display: inline-block;
   cursor: pointer;
   width: 1rem;
   height: 1rem;

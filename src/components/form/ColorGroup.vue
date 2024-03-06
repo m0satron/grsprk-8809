@@ -1,5 +1,5 @@
 <template>
-  <div class="color-group">
+  <div class="color-group flex">
     <ColorItem
       v-for="color in colors"
       :key="color"
@@ -27,7 +27,6 @@ const setSelectedColor = (color: Color) => emit('update:modelValue', color)
 
 <style scoped lang="scss">
 .color-group {
-  display: flex;
   gap: 0.5rem;
 }
 </style>
