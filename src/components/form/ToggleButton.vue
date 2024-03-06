@@ -46,7 +46,7 @@ const toggle = () => {
 
 .toggle-button:hover {
   .switch {
-    box-shadow: 0 0 0 0.2rem opacity($green-light, 0.8);
+    box-shadow: 0 0 0 0.4rem opacity($green-light, 0.6);
     transition: transform 0.3s ease;
   }
 }
@@ -62,7 +62,7 @@ const toggle = () => {
 .is-on {
   background-color: $green;
   .switch {
-    transform: translateX(24px);
+    transform: translateX(1.6rem);
   }
 }
 </style>

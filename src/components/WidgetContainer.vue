@@ -32,7 +32,7 @@ hr {
 .widget-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: space-between;
   align-items: center;
 }

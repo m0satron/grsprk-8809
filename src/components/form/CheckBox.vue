@@ -5,6 +5,7 @@
     class="checkbox-container checkbox rounded-s border-l"
     :class="{
       'border-green bg-color-green': isChecked,
+      'border-black': !isChecked,
       'bg-color-white': !isChecked
     }"
   >

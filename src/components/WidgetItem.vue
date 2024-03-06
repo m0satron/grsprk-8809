@@ -1,7 +1,10 @@
 <template>
   <div class="bg-color-white widget rounded-m">
     <div class="widget-header bg-color-blue rounded-m" :class="widgetHeaderClasses">
-      <GreenSparkLogoGreen v-if="selectedColor === 'beige'" class="widget-header__logo" />
+      <GreenSparkLogoGreen
+        v-if="selectedColor === 'beige' || selectedColor === 'white'"
+        class="widget-header__logo"
+      />
       <GreenSparkLogo v-else class="widget-header__logo" />
       <div class="widget-header__content">
         <span class="widget-header__sub"> This product {{ action }} </span>
@@ -63,7 +66,7 @@ const widgetHeaderClasses = computed(() => {
       : props.selectedColor === 'white'
         ? 'color-green'
         : 'color-white'
-        
+
   return [backgroundColor, color]
 })
 

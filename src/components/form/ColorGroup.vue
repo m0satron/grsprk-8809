@@ -20,7 +20,7 @@ defineProps<{
   modelValue: Color
 }>()
 
-const colors: Color[] = ['white', 'black', 'blue', 'green', 'beige']
+const colors: Color[] = ['blue', 'green', 'beige', 'white', 'black']
 
 const setSelectedColor = (color: Color) => emit('update:modelValue', color)
 </script>
