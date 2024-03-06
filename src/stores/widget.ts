@@ -9,7 +9,7 @@ export const useWidgetStore = defineStore('widgets', {
   },
   actions: {
     async getWidgets() {
-      const req = await fetch('https://api.mocki.io/v2/016d11e8/product-widgets')
+      const req = await fetch(import.meta.env.VITE_API_BASE_URL)
       const res = await req.json()
       this.data = res
     },
