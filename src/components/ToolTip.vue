@@ -6,7 +6,7 @@
   <Transition name="fade">
     <div
       v-if="showTooltip"
-      class="tooltip rounded-s bg-color-white"
+      class="tooltip rounded-s bg-color-white color-black"
       @mouseleave="showTooltip = false"
     >
       This widget links directly to your public profile so that you can easily share your impact
@@ -29,18 +29,22 @@ const showTooltip = ref(false)
 </script>
 
 <style scoped lang="scss">
+@import '@/assets/variables/colors.scss';
+@import '@/assets/functions/opacity.scss';
+
 .tooltip {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 15.5rem;
-  height: 15.5rem;
+  height: fit-content;
   text-align: center;
   padding: 0.6rem;
   transition: opacity 300ms ease-in-out;
   opacity: 1;
   position: absolute;
   z-index: 100;
+  box-shadow: -0.5rem 1.1rem 3rem -13px opacity($black, 0.2);
 }
 
 .fade-enter-active,

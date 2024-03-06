@@ -4,7 +4,8 @@
       v-for="color in colors"
       :key="color"
       :color="color"
-      @click="emit('select:color', color)"
+      @click="() => setSelectedColor(color)"
+      :selected="color === modelValue"
     />
   </div>
 </template>
@@ -13,17 +14,20 @@
 import ColorItem from './ColorItem.vue'
 import type { Color } from '@/types/Color'
 
-const emit = defineEmits<{
-  (event: 'select:color', value: Color): void
+const emit = defineEmits(['update:modelValue'])
+
+defineProps<{
+  modelValue: Color
 }>()
 
 const colors: Color[] = ['white', 'black', 'blue', 'green', 'beige']
+
+const setSelectedColor = (color: Color) => emit('update:modelValue', color)
 </script>
 
 <style scoped lang="scss">
 .color-group {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1rem;
 }
 </style>

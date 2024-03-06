@@ -8,9 +8,12 @@ import type { Color } from '@/types/Color'
 
 const props = defineProps<{
   color: Color
+  selected: boolean
 }>()
 
-const colorClass = computed(() => `bg-color-${props.color}`)
+const colorClass = computed(() => {
+  return `bg-color-${props.color === 'white' ? 'white-plain' : props.color} ${props.selected ? 'selected' : ''}`
+})
 </script>
 
 <style scoped lang="scss">
@@ -20,16 +23,17 @@ const colorClass = computed(() => `bg-color-${props.color}`)
 .color-item {
   display: inline-block;
   cursor: pointer;
-  width: 2.1rem;
-  height: 2.1rem;
-  transition:
-    background-color 300ms,
-    border-color 300ms,
-    box-shadow 300ms;
+  width: 1rem;
+  height: 1rem;
+  transition: all 0.3s ease;
 }
 
 .color-item:hover {
-  box-shadow: 0 0 0 0.2rem opacity($gray, 0.8);
-  transition: transform 0.3s ease;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.selected {
+  box-shadow: 0 0 0 0.2rem opacity($gray, 0.6);
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div
-    class="toggle-button bg-color-white border border-green-light rounded-l"
+    class="toggle-button bg-color-white border border-green-light rounded-xl"
     :class="{ 'is-on': isOn }"
     @click="toggle"
   >
-    <div class="switch border border-beige rounded-l bg-color-white"></div>
+    <div class="switch border border-beige rounded-xl bg-color-white"></div>
   </div>
 </template>
 

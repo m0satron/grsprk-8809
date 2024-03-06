@@ -2,14 +2,14 @@
   <input type="checkbox" v-model="isChecked" />
   <div
     @click="toggle"
-    class="checkbox-container checkbox rounded-s border-xl"
+    class="checkbox-container checkbox rounded-s border-l"
     :class="{
       'border-green bg-color-green': isChecked,
       'bg-color-white': !isChecked
     }"
   >
     <AkCheck v-if="isChecked" class="color-white icon" />
-    <div class="rounded-l hoverstate" />
+    <div class="rounded-xl hoverstate" />
   </div>
 </template>
 
@@ -44,8 +44,8 @@ input {
 .checkbox-container {
   display: inline-block;
   cursor: pointer;
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 1rem;
+  height: 1rem;
   position: relative;
   transition:
     background-color 300ms,
@@ -55,11 +55,11 @@ input {
 
 .hoverstate {
   opacity: 0;
-  width: 4.2rem;
-  height: 4.2rem;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
-  top: -1.2rem;
-  left: -1.2rem;
+  top: -0.6rem;
+  left: -0.6rem;
   z-index: 0;
   background-color: opacity($green-light, 0.8);
   transition: opacity 300ms ease;
@@ -73,7 +73,7 @@ input {
 }
 
 .icon {
-  font-size: 2rem;
+  font-size: 0.8rem;
   position: absolute;
   top: 50%;
   left: 50%;
