@@ -9,9 +9,13 @@ export const useWidgetStore = defineStore('widgets', {
   },
   actions: {
     async getWidgets() {
-      const req = await fetch(import.meta.env.VITE_API_BASE_URL)
-      const res = await req.json()
-      this.data = res
+      try {
+        const req = await fetch(import.meta.env.VITE_API_BASE_URL)
+        const res = await req.json()
+        this.data = res
+      } catch(err) {
+        //handle error in an appropriate way
+      }
     },
     setColor(id: number, color: Color) {
       const widget = this.data.find((widget) => widget.id === id)
