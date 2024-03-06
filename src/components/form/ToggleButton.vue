@@ -12,7 +12,7 @@
 import { ref, watchEffect } from 'vue'
 
 const emit = defineEmits<{
-  (event: 'update:modelValue'): void
+  (event: 'update:modelValue', value: boolean): void
 }>()
 
 const props = defineProps<{
