@@ -1,47 +1,37 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import WidgetContainer from './components/WidgetContainer.vue'
+import WidgetItem from './components/WidgetItem.vue'
+import { useWidgetStore } from './stores/widget'
+import { storeToRefs } from 'pinia'
+
+const { widgets } = storeToRefs(useWidgetStore())
+
+const { setColor, setLinked, setActive } = useWidgetStore()
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper bg-color-blue text-sm texxt-sm" >
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
   <main>
-    <TheWelcome />
+    <WidgetContainer>
+      <WidgetItem
+        v-for="widget in widgets"
+        :key="widget.id"
+        v-bind="widget"
+        @update:linked="setLinked(widget.id, $event)"
+        @update:active="setActive(widget.id, $event)"
+        @update:selectedColor="setColor(widget.id, $event)"
+      />
+    </WidgetContainer>
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style scoped lang="scss">
+@import '@/assets/variables/colors.scss';
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffff;
+  padding: 2rem;
 }
 </style>

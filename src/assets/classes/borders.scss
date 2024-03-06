@@ -23,8 +23,9 @@ $borders: (
 
 $border-radiuses: (
   's': b.$small,
-  'm': b.$rounded,
-  'l': b.$pill
+  'm': b.$medium,
+  'l': b.$rounded,
+  'xl': b.$pill
 );
 
 .border {
