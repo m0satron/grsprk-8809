@@ -1,6 +1,7 @@
 # greenspark
 
-A simple service just to show some basic coding skills. There are still plenty of things that could be improved, but have been compromised with out of time constraint. Some of the following are:
+A simple service just to show some basic coding skills. I used VueJS and Pinia, together with TypeScript. Prettier for code formatting.
+There are still plenty of things that could be improved, but have been compromised with out of time constraint. Some of the following are:
 
 * I made a lib similar to tailwind, since I know a lot of devs don't like to work with CSS and prefer to just use classes. But many more classes would be needed:
     - Spacings(margin, padding)
@@ -15,6 +16,8 @@ A simple service just to show some basic coding skills. There are still plenty o
 * Error handling. None error handling is done on the message layer (the store) or in the components. This would be a necessity in a real production app. But for the purpose of this code test I decided to leave it out. 
 
 To run the project:
+
+add a .env.local in the root with VITE_API_BASE_URL=https://path/to/endpoint
 
 ## Project Setup
 
