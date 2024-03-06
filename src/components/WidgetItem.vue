@@ -1,6 +1,6 @@
 <template>
   <div class="bg-color-white widget rounded-m">
-    <div class="widget-header bg-color-blue rounded-m" :class="widgetHeaderClasses">
+    <div class="widget-header flex bg-color-blue rounded-m" :class="widgetHeaderClasses">
       <GreenSparkLogoGreen
         v-if="selectedColor === 'beige' || selectedColor === 'white'"
         class="widget-header__logo"
@@ -12,9 +12,9 @@
       </div>
     </div>
 
-    <div class="widget-content">
-      <div class="widget-content__item text-xs">
-        <div class="description">
+    <div class="widget-content flex flex-column justify-between">
+      <div class="widget-content__item flex align-center justify-between text-xs">
+        <div class="flex">
           <p class="color-green profile-link">Link to public profile</p>
           <ToolTip class="color-green" url="www.google.com" />
         </div>
@@ -22,12 +22,12 @@
         <CheckBox v-model="linked" />
       </div>
 
-      <div class="widget-content__item text-xs">
+      <div class="widget-content__item flex align-center justify-between text-xs">
         Badge colour
         <ColorGroup :selectedColor="selectedColor" v-model="selectedColor" />
       </div>
 
-      <div class="widget-content__item text-xs">
+      <div class="widget-content__item flex align-center justify-between text-xs">
         Activate badge
         <ToggleButton v-model="active" />
       </div>
@@ -89,14 +89,8 @@ watch(selectedColor, (val) => emit('update:selectedColor', val))
   width: 100%;
   height: 4.1rem;
   padding: 0.6rem;
-  display: flex;
   &__logo {
     margin-right: 0.75rem;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
   }
 
   &__sub {
@@ -106,21 +100,11 @@ watch(selectedColor, (val) => emit('update:selectedColor', val))
 
 .widget-content {
   margin-top: 0.625rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   gap: 0.84rem;
 
   &__item {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     color: $green;
-
-    .description {
-      display: flex;
-    }
   }
 }
 </style>
